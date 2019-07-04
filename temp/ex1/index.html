@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    </head>
+    <body>
+        
+        <form action="http://localhost:3000/download/" method="GET" enctype="multipart/form-data">
+            <input type="text" name="fileName" id="fn" />
+            <input type="button" value="click" onclick="getname();" />
+        </form>
+        <!-- 2019-06-07T09:22:04.510Zdownload.jpeg -->
+        <div>
+            <a id="imgatr" download>
+                <img id="im" />
+            </a>
+            <!-- <video id="myvid" width="320" height="240" controls>
+                <source   type="video/mp4">
+                </video> -->
+        </div>
+
+        <div>
+                <a href='http://localhost:3000/download/2019-06-07T12:33:23.492Zsample.pdf' download>link</a>
+        </div>
+    
+        <script>
+            function getname() {
+                var img = document.getElementById("fn").value;
+                var data = document.getElementById('myvid')
+                data.src = 'http://localhost:3000/download/' + img;
+                // var imageattr = document.getElementById('imgatr');
+                // imageattr.href = 'http://localhost:3000/download/' + img;
+            }
+    
+        </script>
+    </body>
+    
+
+</html>
